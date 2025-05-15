@@ -1,7 +1,6 @@
 # genomic.region.coverage
     This folder contains two scripts to compute sequencing depth for NGS data. 
-Both can o
-The input will be a bam file. You will need to know which genomic reference 
+Both can work. The input is a bam file. You will need to know which genomic reference 
 is used and download its genome.size file, or use samtools to generate it 
 from genome.fasta file. To find out which reference was used, use the command: 
 samtools view -H, you will see the genomic build info. 
@@ -14,11 +13,14 @@ the overall sequencing depth is. If you give a region, a bed, or a gene, I will
 only show that region and draw the track picture to show how the sequencing depth 
 is in that region. 
 
-In addition, I also generate the browserable track files (bedgraph or bigwig file)
+In addition, I also generate the browsable track files (bedgraph or bigwig file)
 for future use. It can be loaded into a IGV browser or UCSC genome browser to see
-the sequencing depth in whichever gene or region. Of course you if you are interested
-in certain gene or region, follow the instruction of my script to generate the 
-report and pictures. 
+the sequencing depth in whichever gene or region. See these two pages to learn more:
+https://genome.ucsc.edu/goldenPath/help/bedgraph.html
+https://genome.ucsc.edu/goldenPath/help/bigWig.html
+
+Of course you if you are interested in certain gene or region,
+follow the instruction of my script to generate the report and pictures. 
 
 Required packages or software (versions are not strickly required to be the same but 
 I included what I used in case your versions conficts. For example, pyGenomeTracks may 
@@ -114,11 +116,14 @@ python3 bam_coverage_report.py \
                         GTF or GFF file for gene region extraction
 
 The script depth.with.different.tools.py works as well, it uses many of the functions from bam_coverage_report.py, 
-just to use other tools (samtools or bamdst) to do the samething. 
+just to use other tools (samtools or bamdst) to do the same thing. 
 bamdst 1.0.9 can be found here: https://github.com/shiquan/bamdst
 
-The benefit of bamdst is as it gives more comprehensive coverage report for a bed region. Check the bamdst.output folder for those report.
-This script has similar parameters as bam_coverage_report.py. 
+The benefit of bamdst is as it gives more comprehensive coverage report for a bed region. 
+However, its check the whole bam file and will be slow if you only interested in a small
+region Check the bamdst.output folder for those report. This script has similar parameters 
+as bam_coverage_report.py. 
+
 Options:
   -h, --help            show this help message and exit
   
