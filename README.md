@@ -32,12 +32,19 @@ pyGenomeTracks 3.9
 optparse 1.5.3
 
 pybedtools 0.9.0
+
 pysam 0.19.1
+
 numpy 1.22.4
+
 pandas 1.4.2
+
 matplotlib 3.5.1
+
 tempfile 3.9.18 (same as python)
+
 subprocess 3.9.18 (same as python)
+
 
 Required files to run all functions:
 bamfile, I only put a small bam file here for testing. It's generate by this command: 
@@ -46,43 +53,80 @@ GRCh38_full_analysis_set_plus_decoy_hla.fa.fai (just my example, use yours when 
 gencode.v35.annotation.gtf ( https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_35/gencode.v35.annotation.gtf.gz)
 
 example usage: 
-python3 bam_coverage_report.py -i NA12878.wgs.bam -o NA12878.wgs.ENSG00000227232.5 -g ENSG00000227232.5 -a gencode.v35.annotation.gtf -f bigwig -t True -G GRCh38_full_analysis_set_plus_decoy_hla.fa.fai -d 
-python3 bam_coverage_report.py -i NA12878.wgs.bam -o NA12878.wgs -f bigwig -t True -G GRCh38_full_analysis_set_plus_decoy_hla.fa.fai
-python3 bam_coverage_report.py -i NA12878.wgs.bam -o NA12878.wgs.bed -b test.bed -f bigwig -d -G GRCh38_full_analysis_set_plus_decoy_hla.fa.fai 
-python3 bam_coverage_report.py -i NA12878.wgs.bam -o NA12878.wgs.region -r chr1:29554-31109 -f bigwig -d -G GRCh38_full_analysis_set_plus_decoy_hla.fa.fai 
+python3 bam_coverage_report.py \
+    -i NA12878.wgs.bam \
+    -o NA12878.wgs.ENSG00000227232.5 \
+    -g ENSG00000227232.5 \
+    -a gencode.v35.annotation.gtf \
+    -f bigwig \
+    -t True \
+    -G GRCh38_full_analysis_set_plus_decoy_hla.fa.fai \
+    -d 
 
-Possible Options:
+python3 bam_coverage_report.py \
+    -i NA12878.wgs.bam \
+    -o NA12878.wgs \
+    -f bigwig \
+    -t True \
+    -G GRCh38_full_analysis_set_plus_decoy_hla.fa.fai
+    
+python3 bam_coverage_report.py \
+    -i NA12878.wgs.bam \
+    -o NA12878.wgs.bed \
+    -b test.bed \
+    -f bigwig \
+    -d \
+    -G GRCh38_full_analysis_set_plus_decoy_hla.fa.fai 
+    
+python3 bam_coverage_report.py \
+    -i NA12878.wgs.bam \
+    -o NA12878.wgs.region \
+    -r chr1:29554-31109 \
+    -f bigwig \
+    -d \
+    -G GRCh38_full_analysis_set_plus_decoy_hla.fa.fai 
+
+ Options explained:
 
   -h, --help            show this help message and exit
   
   -i INPUT, --input=INPUT
-  
                         Input BAM/CRAM file
                         
   -g GENE, --gene=GENE  Gene name or geneID to extract region from (requires
                         -a parameter, the annotation file needed to tell where
                         this gene is)
+                        
   -r REGION, --region=REGION
                         Genomic region (chr:start-end)
+                        
   -b BED, --bed=BED     BED file of regions
+  
   -q QUALITY, --quality=QUALITY
                         min mapping quality to include
+                        
   -o OUTPUT, --output=OUTPUT
                         Base output name (no extension)
+                        
   -t, --track           output track file? [True or False] The file format can
                         be bedgraph or bigwig
+                        
   -f OUTPUTFORMAT, --outputformat=OUTPUTFORMAT
                         Output format for genomic track, default is bedgraph,
                         if you want a bigwig file for the output, please
                         provide -G parameter, the genome file, it can be
                         genome.fa.fai generated from samtools faidx. If this
-                        parameter is on, --track will be automatically on
+                        parameter is on, --track will be automatically turned on
+                        
   -d, --draw            Draw coverage track PDF, this option also need track
                         file, it automatically turn on the --track option
+                        
   -p PICTURE_FORMAT, --picture_format=PICTURE_FORMAT
                         you want a PDF file or png file
+                        
   -G GENOMEFILE, --Genomefile=GENOMEFILE
                         Genome file for BigWig conversion
+                        
   -a ANNOTATION, --annotation=ANNOTATION
                         GTF or GFF file for gene region extraction
 
@@ -94,18 +138,25 @@ The benefit of bamdst is as it gives more comprehensive coverage report for a be
 This script has similar parameters as bam_coverage_report.py. 
 Options:
   -h, --help            show this help message and exit
+  
   -i INPUT, --input=INPUT
                         Input BAM/CRAM file
+                        
   -g GENE, --gene=GENE  Gene name or geneID to extract region from (requires
                         -a parameter, the annotation file needed to tell where
                         this gene is)
+                        
   -r REGION, --region=REGION
                         Genomic region (chr:start-end)
+                        
   -b BED, --bed=BED     BED file of regions
+  
   -q QUALITY, --quality=QUALITY
                         min mapping quality to include
+                        
   -o OUTPUT, --output=OUTPUT
                         Base output name (no extension)
+                        
   -t TOOLS, --tools=TOOLS
                         what tools to use? [samtools or bamdst] if bamdst is
                         used, the output will be a directory and bed file is
@@ -113,16 +164,21 @@ Options:
                         region will be transformed to a bed file, I wouldn't
                         use bamdst if the region I am interested is not large
                         as it's slow
+                        
   -f OUTPUTFORMAT, --outputformat=OUTPUTFORMAT
                         Output format, default is bedgraph format, if you want
                         a bigwig file for the output, please provide -G
                         parameter, the genome file, it can be genome.fa.fai
                         generated from samtools faidx
+                        
   -d, --draw            Draw coverage track PDF
+  
   -G GENOMEFILE, --Genomefile=GENOMEFILE
                         Genome file for BigWig conversion
+                        
   -a ANNOTATION, --annotation=ANNOTATION
                         GTF or GFF file for gene region extraction
+                        
 
 
 
