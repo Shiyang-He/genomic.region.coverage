@@ -1,5 +1,6 @@
 # genomic.region.coverage
-  This folder contains the script to compute sequencing depth for NGS data. 
+    This folder contains two scripts to compute sequencing depth for NGS data. 
+Both can o
 The input will be a bam file. You will need to know which genomic reference 
 is used and download its genome.size file, or use samtools to generate it 
 from genome.fasta file. To find out which reference was used, use the command: 
@@ -19,59 +20,37 @@ the sequencing depth in whichever gene or region. Of course you if you are inter
 in certain gene or region, follow the instruction of my script to generate the 
 report and pictures. 
 
-Required packages or software:
+Required packages or software (versions are not strickly required to be the same but 
+I included what I used in case your versions conficts. For example, pyGenomeTracks may 
+conflict with some of the installed packages, so better to create a new environment 
+and install everything needed):
 
-(versions are not strickly required to be the same but I included what I used in 
-case your versions conficts. For example, pyGenomeTracks may conflict with some of 
-the installed packages, so better to create a new environment and install everything needed)
-
-samtools 1.14
-
-bedGraphToBigWig v4
-
-Python 3.9.18
-
-pyGenomeTracks 3.9
-
-optparse 1.5.3
-
-pybedtools 0.9.0
-
-pysam 0.19.1
-
-numpy 1.22.4
-
-pandas 1.4.2
-
-matplotlib 3.5.1
-
-tempfile 3.9.18 (same as python)
-
-subprocess 3.9.18 (same as python)
-
+samtools 1.14 , bedGraphToBigWig v4,  Python 3.9.18, pyGenomeTracks 3.9, optparse 1.5.3, 
+pybedtools 0.9.0, pysam 0.19.1, numpy 1.22.4, pandas 1.4.2, matplotlib 3.5.1, 
+tempfile 3.9.18 (same as python), subprocess 3.9.18 (same as python)
 
 Required files to run all functions:
-bamfile, I only put a small bam file here for testing. It's generate by this command: 
-samtools view -L test.2.bed -b -O NA12878.wgs.toy.bam NA12878.wgs.bam && samtools index NA12878.wgs.toy.bam
-GRCh38_full_analysis_set_plus_decoy_hla.fa.fai (just my example, use yours when your bam file changes)
-gencode.v35.annotation.gtf ( https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_35/gencode.v35.annotation.gtf.gz)
+1) bamfile, I only put a small bam file here for testing. It's generate by this command: 
+    samtools view -L test.2.bed -b -O NA12878.wgs.toy.bam NA12878.wgs.bam && samtools index NA12878.wgs.toy.bam
+2) GRCh38_full_analysis_set_plus_decoy_hla.fa.fai (just my example, use yours when your bam file changes)
+3) gencode.v35.annotation.gtf ( https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_35/gencode.v35.annotation.gtf.gz)
 
 example usage: 
-python3 bam_coverage_report.py \\
-    -i NA12878.wgs.bam \\
-    -o NA12878.wgs.ENSG00000227232.5 \\
-    -g ENSG00000227232.5 \\
-    -a gencode.v35.annotation.gtf \\
-    -f bigwig \\
-    -t True \\
-    -G GRCh38_full_analysis_set_plus_decoy_hla.fa.fai \\
+python3 bam_coverage_report.py \
+    -i NA12878.wgs.bam \
+    -o NA12878.wgs.ENSG00000227232.5 \
+    -g ENSG00000227232.5 \
+    -a gencode.v35.annotation.gtf \
+    -f bigwig \
+    -t True \
+    -G GRCh38_full_analysis_set_plus_decoy_hla.fa.fai \
     -d 
 
-python3 bam_coverage_report.py \\
-    -i NA12878.wgs.bam \\
-    -o NA12878.wgs \\
-    -f bigwig \\
-    -t True \\
+python3 bam_coverage_report.py \
+    -i NA12878.wgs.bam \
+    -o NA12878.wgs \
+    -f bigwig \
+    -t True \
     -G GRCh38_full_analysis_set_plus_decoy_hla.fa.fai
     
 python3 bam_coverage_report.py \
