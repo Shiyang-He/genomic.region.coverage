@@ -3,7 +3,7 @@ This folder contains two scripts to compute sequencing depth for NGS data. Both
 can work. The input is a bam file. You will need to know which genomic reference 
 is used and download its genome.size file, or use samtools to generate it 
 from genome.fasta file. To find out which reference was used, use the command: 
-samtools view -H, you will see the genomic build info. 
+samtools view -H input.bam , you will see the genomic build info. 
 
 Stat region can be given in 4 ways (a bed file, a region, a gene, or nothing 
 given which will compute the whole genome region)
