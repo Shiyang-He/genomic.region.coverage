@@ -38,8 +38,9 @@ Required files to run all functions:
 3) gencode.v35.annotation.gtf ( https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_35/gencode.v35.annotation.gtf.gz)
 
 example usage: 
+
     python3 bam_coverage_report.py \
-        -i NA12878.wgs.bam \
+        -i NA12878.wgs.toy.bam \
         -o NA12878.wgs.ENSG00000227232.5 \
         -g ENSG00000227232.5 \
         -a gencode.v35.annotation.gtf \
@@ -49,14 +50,14 @@ example usage:
         -d 
 
     python3 bam_coverage_report.py \
-        -i NA12878.wgs.bam \
+        -i NA12878.wgs.toy.bam \
         -o NA12878.wgs \
         -f bigwig \
         -t True \
         -G GRCh38_full_analysis_set_plus_decoy_hla.fa.fai
     
     python3 bam_coverage_report.py \
-        -i NA12878.wgs.bam \
+        -i NA12878.wgs.toy.bam \
         -o NA12878.wgs.bed \
         -b test.bed \
         -f bigwig \
@@ -64,7 +65,7 @@ example usage:
         -G GRCh38_full_analysis_set_plus_decoy_hla.fa.fai 
     
     python3 bam_coverage_report.py \
-        -i NA12878.wgs.bam \
+        -i NA12878.wgs.toy.bam \
         -o NA12878.wgs.region \
         -r chr1:29554-31109 \
         -f bigwig \
