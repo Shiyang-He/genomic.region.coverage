@@ -198,17 +198,17 @@ Options:
 
 OUTPOUT files: 
 
-output_prefix.coverage.txt            tab delimited coverage report for every non zero position, format: chr pos coverage
+output_prefix.coverage.txt: tab delimited coverage report for every non zero position, format: chr pos coverage
 
-output_prefix.coverage.pdf            real coverage within certain region
+output_prefix.coverage.pdf: real coverage within certain region
 
-output_prefix.coverage.report.txt     stats about the coverage, mean, median, max, percentle, etc.
+output_prefix.coverage.report.txt: stats about the coverage, mean, median, max, percentle, etc.
 
-output_prefix.coverage.piechart.pdf   a pie chart of the sequencing depth
+output_prefix.coverage.piechart.pdf: a pie chart of the sequencing depth
 
-output_prefix.bedgraph                tab delimited bedgraph file for computed region, format: chr start end coverage
+output_prefix.bedgraph: tab delimited bedgraph file for computed region, format: chr start end coverage
 
-output_prefix.bw                      bigwig file for the coverage, it's a indexed binary file for bedgraph
+output_prefix.bw: bigwig file for the coverage, it's a indexed binary file for bedgraph, which is easy to load in to genome browser.
 
 
 
