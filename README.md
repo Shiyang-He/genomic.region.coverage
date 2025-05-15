@@ -57,21 +57,21 @@ GRCh38_full_analysis_set_plus_decoy_hla.fa.fai (just my example, use yours when 
 gencode.v35.annotation.gtf ( https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_35/gencode.v35.annotation.gtf.gz)
 
 example usage: 
-python3 bam_coverage_report.py \
-    -i NA12878.wgs.bam \
-    -o NA12878.wgs.ENSG00000227232.5 \
-    -g ENSG00000227232.5 \
-    -a gencode.v35.annotation.gtf \
-    -f bigwig \
-    -t True \
-    -G GRCh38_full_analysis_set_plus_decoy_hla.fa.fai \
+python3 bam_coverage_report.py \\
+    -i NA12878.wgs.bam \\
+    -o NA12878.wgs.ENSG00000227232.5 \\
+    -g ENSG00000227232.5 \\
+    -a gencode.v35.annotation.gtf \\
+    -f bigwig \\
+    -t True \\
+    -G GRCh38_full_analysis_set_plus_decoy_hla.fa.fai \\
     -d 
 
-python3 bam_coverage_report.py \
-    -i NA12878.wgs.bam \
-    -o NA12878.wgs \
-    -f bigwig \
-    -t True \
+python3 bam_coverage_report.py \\
+    -i NA12878.wgs.bam \\
+    -o NA12878.wgs \\
+    -f bigwig \\
+    -t True \\
     -G GRCh38_full_analysis_set_plus_decoy_hla.fa.fai
     
 python3 bam_coverage_report.py \
