@@ -116,14 +116,39 @@ example usage:
   -a ANNOTATION, --annotation=ANNOTATION
                         GTF or GFF file for gene region extraction
 
-The script depth.with.different.tools.py works as well, it uses many of the functions from bam_coverage_report.py, 
-just to use other tools (samtools or bamdst) to do the same thing. 
+
+
+The script depth.with.different.tools.py works slightly different , it uses many of the 
+functions from bam_coverage_report.py, it uses other other tools (samtools or bamdst) to 
+do the same thing. 
+
 bamdst 1.0.9 can be found here: https://github.com/shiquan/bamdst
 
 The benefit of bamdst is as it gives more comprehensive coverage report for a bed region. 
 However, its check the whole bam file and will be slow if you only interested in a small
 region Check the bamdst.output folder for those report. This script has similar parameters 
 as bam_coverage_report.py. 
+
+Example usage:
+
+    python3 depth.with.different.tools.py \
+        -i input.bam \
+        -o output \
+        -t samools \
+        -g ACTD \
+        -a gencode.v35.annotation.gtf \
+        -d
+    python3 depth.with.different.tools.py  \
+        -i input.bam \
+        -o output \
+        -t bamdst \
+        -b a.bed
+    python3 depth.with.different.tools.py \
+    -i input.bam \
+    -o output \
+    -r chr:start-end \
+    -d
+
 
 Options:
   -h, --help            show this help message and exit
@@ -168,6 +193,14 @@ Options:
   -a ANNOTATION, --annotation=ANNOTATION
                         GTF or GFF file for gene region extraction
                         
+
+OUTPOUT files: 
+output_prefix.coverage.txt            tab delimited coverage report for every non zero position, format: chr<tab>pos<tab>coverage
+output_prefix.coverage.pdf            real coverage within certain region
+output_prefix.coverage.report.txt     stats about the coverage, mean, median, max, percentle, etc.
+output_prefix.coverage.piechart.pdf   a pie chart of the sequencing depth
+output_prefix.bedgraph                bedgraph file for computed region, format: chr<tab>start<tab>end<tab>coverage
+output_prefix.bw                      bigwig file for the coverage, it's a indexed binary file for bedgraph
 
 
 
