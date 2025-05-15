@@ -151,6 +151,7 @@ Example usage:
 
 
 Options:
+
   -h, --help            show this help message and exit
   
   -i INPUT, --input=INPUT
@@ -194,7 +195,9 @@ Options:
                         GTF or GFF file for gene region extraction
                         
 
+
 OUTPOUT files: 
+
 output_prefix.coverage.txt            tab delimited coverage report for every non zero position, format: chr pos coverage
 
 output_prefix.coverage.pdf            real coverage within certain region
