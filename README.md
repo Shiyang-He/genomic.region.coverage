@@ -20,7 +20,10 @@ in certain gene or region, follow the instruction of my script to generate the
 report and pictures. 
 
 Required packages or software:
-(version is not strickly required to be the same but I included what I used in case your versions conficts)
+
+(versions are not strickly required to be the same but I included what I used in 
+case your versions conficts. For example, pyGenomeTracks may conflict with some of 
+the installed packages, so better to create a new environment and install everything needed)
 
 samtools 1.14
 
