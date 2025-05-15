@@ -144,10 +144,10 @@ Example usage:
         -t bamdst \
         -b a.bed
     python3 depth.with.different.tools.py \
-    -i input.bam \
-    -o output \
-    -r chr:start-end \
-    -d
+        -i input.bam \
+        -o output \
+        -r chr:start-end \
+        -d
 
 
 Options:
@@ -195,11 +195,16 @@ Options:
                         
 
 OUTPOUT files: 
-output_prefix.coverage.txt            tab delimited coverage report for every non zero position, format: chr<tab>pos<tab>coverage
+output_prefix.coverage.txt            tab delimited coverage report for every non zero position, format: chr pos coverage
+
 output_prefix.coverage.pdf            real coverage within certain region
+
 output_prefix.coverage.report.txt     stats about the coverage, mean, median, max, percentle, etc.
+
 output_prefix.coverage.piechart.pdf   a pie chart of the sequencing depth
-output_prefix.bedgraph                bedgraph file for computed region, format: chr<tab>start<tab>end<tab>coverage
+
+output_prefix.bedgraph                tab delimited bedgraph file for computed region, format: chr start end coverage
+
 output_prefix.bw                      bigwig file for the coverage, it's a indexed binary file for bedgraph
 
 
