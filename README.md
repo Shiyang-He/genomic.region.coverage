@@ -4,8 +4,9 @@ The input will be a bam file. You will need to know which genomic reference
 is used and download its genome.size file, or use samtools to generate it 
 from genome.fasta file. To find out which reference was used, use the command: 
 samtools view -H, you will see the genomic build info. 
-  Stat region can be given in 4 ways (a bed file, a region, a gene, or nothing 
-give which will compute the whole genome region)
+
+Stat region can be given in 4 ways (a bed file, a region, a gene, or nothing 
+given which will compute the whole genome region)
 
 The idea is to give a short coverage report and a pie chart to show how well 
 the overall sequencing depth is. If you give a region, a bed, or a gene, I will 
