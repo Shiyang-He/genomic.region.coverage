@@ -20,11 +20,17 @@ report and pictures.
 
 Required packages or software:
 (version is not strickly required to be the same but I included what I used in case your versions conficts)
+
 samtools 1.14
+
 bedGraphToBigWig v4
+
 Python 3.9.18
+
 pyGenomeTracks 3.9
+
 optparse 1.5.3
+
 pybedtools 0.9.0
 pysam 0.19.1
 numpy 1.22.4
@@ -46,9 +52,13 @@ python3 bam_coverage_report.py -i NA12878.wgs.bam -o NA12878.wgs.bed -b test.bed
 python3 bam_coverage_report.py -i NA12878.wgs.bam -o NA12878.wgs.region -r chr1:29554-31109 -f bigwig -d -G GRCh38_full_analysis_set_plus_decoy_hla.fa.fai 
 
 Possible Options:
+
   -h, --help            show this help message and exit
+  
   -i INPUT, --input=INPUT
+  
                         Input BAM/CRAM file
+                        
   -g GENE, --gene=GENE  Gene name or geneID to extract region from (requires
                         -a parameter, the annotation file needed to tell where
                         this gene is)
