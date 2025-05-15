@@ -1,6 +1,6 @@
 # genomic.region.coverage
-    This folder contains two scripts to compute sequencing depth for NGS data. 
-Both can work. The input is a bam file. You will need to know which genomic reference 
+This folder contains two scripts to compute sequencing depth for NGS data. Both 
+can work. The input is a bam file. You will need to know which genomic reference 
 is used and download its genome.size file, or use samtools to generate it 
 from genome.fasta file. To find out which reference was used, use the command: 
 samtools view -H, you will see the genomic build info. 
@@ -38,38 +38,38 @@ Required files to run all functions:
 3) gencode.v35.annotation.gtf ( https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_35/gencode.v35.annotation.gtf.gz)
 
 example usage: 
-python3 bam_coverage_report.py \
-    -i NA12878.wgs.bam \
-    -o NA12878.wgs.ENSG00000227232.5 \
-    -g ENSG00000227232.5 \
-    -a gencode.v35.annotation.gtf \
-    -f bigwig \
-    -t True \
-    -G GRCh38_full_analysis_set_plus_decoy_hla.fa.fai \
-    -d 
+    python3 bam_coverage_report.py \
+        -i NA12878.wgs.bam \
+        -o NA12878.wgs.ENSG00000227232.5 \
+        -g ENSG00000227232.5 \
+        -a gencode.v35.annotation.gtf \
+        -f bigwig \
+        -t True \
+        -G GRCh38_full_analysis_set_plus_decoy_hla.fa.fai \
+        -d 
 
-python3 bam_coverage_report.py \
-    -i NA12878.wgs.bam \
-    -o NA12878.wgs \
-    -f bigwig \
-    -t True \
-    -G GRCh38_full_analysis_set_plus_decoy_hla.fa.fai
+    python3 bam_coverage_report.py \
+        -i NA12878.wgs.bam \
+        -o NA12878.wgs \
+        -f bigwig \
+        -t True \
+        -G GRCh38_full_analysis_set_plus_decoy_hla.fa.fai
     
-python3 bam_coverage_report.py \
-    -i NA12878.wgs.bam \
-    -o NA12878.wgs.bed \
-    -b test.bed \
-    -f bigwig \
-    -d \
-    -G GRCh38_full_analysis_set_plus_decoy_hla.fa.fai 
+    python3 bam_coverage_report.py \
+        -i NA12878.wgs.bam \
+        -o NA12878.wgs.bed \
+        -b test.bed \
+        -f bigwig \
+        -d \
+        -G GRCh38_full_analysis_set_plus_decoy_hla.fa.fai 
     
-python3 bam_coverage_report.py \
-    -i NA12878.wgs.bam \
-    -o NA12878.wgs.region \
-    -r chr1:29554-31109 \
-    -f bigwig \
-    -d \
-    -G GRCh38_full_analysis_set_plus_decoy_hla.fa.fai 
+    python3 bam_coverage_report.py \
+        -i NA12878.wgs.bam \
+        -o NA12878.wgs.region \
+        -r chr1:29554-31109 \
+        -f bigwig \
+        -d \
+        -G GRCh38_full_analysis_set_plus_decoy_hla.fa.fai 
 
  Options explained:
 
