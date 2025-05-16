@@ -7,7 +7,7 @@ from genome.fasta file. To find out which reference was used, use the command:
 
         samtools view -H input.bam 
 
-The idea here is to give a short coverage report and a pie chart to show how well 
+The goal here is to give a short coverage report and a pie chart to show how well 
 the overall sequencing depth is. The coverage report tells how deep the sequencing
 is and how well the genomic region is been sequenced. Also include the option to 
 generate browsable track files (bedgraph/bigwig).
@@ -19,10 +19,26 @@ Bedgraph/bigwig files can be loaded into a IGV browser or UCSC genome browser to
 the sequencing depth in whichever gene or region. See these two pages to learn more:
 https://genome.ucsc.edu/goldenPath/help/bedgraph.html
 https://genome.ucsc.edu/goldenPath/help/bigWig.html
-
 Of course you if you are interested in certain gene or region but don't want use IGV,
 follow the instruction of my script to generate the short report and pictures. 
 
+Here are the steps to do this job:
+1) I will generate a bunch of options to give input file, output file, if pictures will be
+   drawn, if you want a (bigwig/bedgraph) track file.
+2) Read the bam file using pysam, it has a pileup option, similar to samtools pileup which
+   gives sequencing depth at each position. Write the depth at each position to a coverage file.
+   store depth info in a list to calculate percentile etc.
+   If a gene is given, a gtf must be given to get the genomic region for that gene. It can
+   be gene name or gene ID. GFF file works as well.
+4) The coverage report will be printed in a coverage.report.txt file.
+5) matplotlib will be used to draw a piechart to show what's the percentage of each sequencing depth.
+6) Read the coverage file and write it as bedgraph format.
+7) Use bedGraphToBigWig tool to transform the bedgraph to bigwig file
+8) The pyGenomeTracks tools will be introduced to draw a IGV like track file to show overall
+   coverage for given window
+
+
+   
 Required packages or software (versions are not strickly required to be the same but 
 I included what I used in case your versions conficts. For example, pyGenomeTracks may 
 conflict with some of the installed packages, so better to create a new environment 
