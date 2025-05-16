@@ -165,7 +165,7 @@ output_prefix.bw: bigwig file for the coverage, it's a indexed binary file for b
 
 The second script depth.with.different.tools.py works slightly different , it uses many of the 
 functions from bam_coverage_report.py, however it allows using other other tools (samtools or bamdst) to 
-do the same thing. 
+read the bam file. 
 
 bamdst 1.0.9 can be found here: https://github.com/shiquan/bamdst
 
