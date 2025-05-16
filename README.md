@@ -59,8 +59,8 @@ If you have a CRAM file and want to change it to bam file, use this command:
 
         samtools view -b -o NA12878.wgs.bam NA12878.alt_bwamem_GRCh38DH.20150718.CEU.low_coverage.cram && samtools index NA12878.wgs.bam
 
-3) GRCh38_full_analysis_set_plus_decoy_hla.fa.fai (just my example, use yours when your bam file changes)
-4) gencode.v35.annotation.gtf ( https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_35/gencode.v35.annotation.gtf.gz)
+2) GRCh38_full_analysis_set_plus_decoy_hla.fa.fai (just my example, use yours when your bam file changes)
+3) gencode.v35.annotation.gtf ( https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_35/gencode.v35.annotation.gtf.gz)
 (I only include a small portion of this file in the github repo to show case)
 
 example usage: 
