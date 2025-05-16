@@ -119,7 +119,8 @@ example usage:
                         GTF or GFF file for gene region extraction
 
 
-##############################################################################################################
+###################################################################################################
+
 OUTPOUT files: 
 
 output_prefix.coverage.txt: tab delimited coverage report for every non zero position, format: chr pos coverage
@@ -135,6 +136,7 @@ output_prefix.bedgraph: tab delimited bedgraph file for computed region, format:
 output_prefix.bw: bigwig file for the coverage, it's a indexed binary file for bedgraph, which is easy to load in to genome browser.
 
 
+#############################################################################################
 #############################################################################################
 
 The second script depth.with.different.tools.py works slightly different , it uses many of the 
