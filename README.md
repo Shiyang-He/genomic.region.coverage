@@ -4,15 +4,17 @@ The input is a bam file from NA12878 WGS mapping to GRCH38 reference. If use thi
 script to count other bam files, you will need to know which genomic reference 
 is used and download its genome.size file, or use samtools to generate it 
 from genome.fasta file. To find out which reference was used, use the command: 
-samtools view -H input.bam , you will see the genomic build info. 
 
-The idea is to give a short coverage report and a pie chart to show how well 
+        samtools view -H input.bam 
+
+The idea here is to give a short coverage report and a pie chart to show how well 
 the overall sequencing depth is. The coverage report tells how deep the sequencing
 is and how well the genomic region is been sequenced. Also include the option to 
 generate browsable track files (bedgraph/bigwig).
 
 If you give a region, a bed, or a gene, I will only compute coverage in that region 
-and draw the track picture to show how the sequencing depth is in that region. 
+and draw the track picture to show how the sequencing depth is in that region. This is 
+useful if you did sequencing and want to find out how well some gene or region is sequenced. 
 Bedgraph/bigwig files can be loaded into a IGV browser or UCSC genome browser to see
 the sequencing depth in whichever gene or region. See these two pages to learn more:
 https://genome.ucsc.edu/goldenPath/help/bedgraph.html
