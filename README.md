@@ -24,12 +24,12 @@ follow the instruction of my script to generate the short report and pictures.
 
 Here are the steps to do this job:
 1) I will generate a bunch of options to give input file, output file, if pictures will be
-   drawn, if you want a (bigwig/bedgraph) track file.
-2) Read the bam file using pysam, it has a pileup option, similar to samtools pileup which
+   drawn, if you want a (bigwig/bedgraph) track file, etc.
+2) Read the bam file using pysam, it has a pileup option, similar to 'samtools pileup' which
    gives sequencing depth at each position. Write the depth at each position to a coverage file.
    store depth info in a list to calculate percentile etc.
-   If a gene is given, a gtf must be given to get the genomic region for that gene. It can
-   be gene name or gene ID. GFF file works as well.
+   If a gene is given, a gtf/gff must be given to get the genomic region for that gene. It can
+   be gene name or gene ID. 
 4) The coverage report will be printed in a coverage.report.txt file.
 5) matplotlib will be used to draw a piechart to show what's the percentage of each sequencing depth.
 6) Read the coverage file and write it as bedgraph format.
