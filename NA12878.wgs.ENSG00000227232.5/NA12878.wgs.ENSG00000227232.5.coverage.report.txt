@@ -1,0 +1,23 @@
+Average Depth	6.684376229830775
+Median Depth	6.0
+Max Depth	17
+>=1X	2495	98.19%
+>=5X	1746	68.71%
+>=10X	674	26.52%
+>=30X	0	0.0%
+>=50X	0	0.0%
+>=100X	0	0.0%
+>=200X	0	0.0%
+0X	46	1.81%
+[1,5X)	749	29.48%
+[5,10X)	1072	42.19%
+[10,30X)	674	26.52%
+[30,50X)	0	0.0%
+[50,100X)	0	0.0%
+[100,200X)	0	0.0%
+10th Percentile	1.0
+25th Percentile	4.0
+50th Percentile	6.0
+75th Percentile	10.0
+90th Percentile	12.0
+Total Bases computed	2541
