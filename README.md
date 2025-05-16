@@ -51,7 +51,7 @@ tempfile 3.9.18 (same as python), subprocess 3.9.18 (same as python)
 Required files to run all functions:
 1) bamfile, I only put a small bam file here for testing. It's generate by this command:
  
-        samtools view -L test.2.bed -b -O NA12878.wgs.toy.bam NA12878.wgs.bam && samtools index NA12878.wgs.toy.bam
+        samtools view -L test.2.bed -b -o NA12878.wgs.toy.bam NA12878.wgs.bam && samtools index NA12878.wgs.toy.bam
 
 If you have a CRAM file and want to change it to bam file, use this command:
 
